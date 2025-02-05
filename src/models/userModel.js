@@ -2,9 +2,9 @@ import { create } from "domain";
 import mongoose, { Schema } from "mongoose";
 import { type } from "os";
 
-// User Login Database Schema
+// User Signin Database Schema
 const userLoginSchema = new Schema({
-  name: {
+  username: {
     type: String,
     required: [true, "Provide a name"],
   },
@@ -20,6 +20,14 @@ const userLoginSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  isVerified: {
+    type: Boolean,
+    default: false,
+  },
+  forgotPasswordToken: String,
+  forgotPasswordTokenExpiry: Date,
+  verifyToken: String,
+  verifyTokenExpiry: Date,
   update: Date,
 });
 
