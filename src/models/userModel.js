@@ -6,7 +6,7 @@ import { type } from "os";
 const userLoginSchema = new Schema({
   username: {
     type: String,
-    required: [true, "Provide a name"],
+    required: [true, "Provide a username"],
   },
   email: {
     type: String,
